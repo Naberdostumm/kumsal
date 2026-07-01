@@ -1,0 +1,10 @@
+📷 Kumsal'ın fotoğraflarını BU KLASÖRE ekle.
+
+- Desteklenen formatlar: .jpg  .jpeg  .png  .webp  .gif
+- İstediğin kadar fotoğraf ekleyebilirsin.
+- İlk (alfabetik ilk) fotoğraf ana sayfadaki büyük yuvarlak resim olur.
+  Belirli bir fotoğrafın en başta olmasını istersen adının başına "0-" koy
+  (örnek: 0-kapak.jpg).
+
+Fotoğrafları ekledikten sonra ana klasördeki "baslat" dosyasına çift tıkla.
+Site açılır ve fotoğraflar otomatik görünür. 💛

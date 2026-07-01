@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumsal 🐚 · Bebeğimizin Dünyası</title>
+  <meta name="description" content="Bebeğimiz Kumsal'ın en güzel anları." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐚</text></svg>" />
+</head>
+<body>
+
+  <!-- Dekoratif arka plan -->
+  <div class="bg-decor" aria-hidden="true">
+    <span class="bubble b1"></span>
+    <span class="bubble b2"></span>
+    <span class="bubble b3"></span>
+    <span class="bubble b4"></span>
+  </div>
+
+  <!-- Navigasyon -->
+  <header class="nav">
+    <a href="#hero" class="nav__logo">🐚 Kumsal</a>
+    <nav class="nav__links">
+      <a href="#hakkinda">Hakkında</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#anilar">Anılar</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero__content">
+      <p class="hero__hi">Merhaba, ben</p>
+      <h1 class="hero__name">Kumsal</h1>
+      <p class="hero__tagline">Ailemizin en tatlı, en minik mutluluğu 💛</p>
+      <a href="#galeri" class="btn">Fotoğraflara Bak 📸</a>
+    </div>
+    <div class="hero__photo">
+      <div class="hero__photo-ring">
+        <img id="heroPhoto" src="" alt="Kumsal" />
+        <div class="hero__photo-empty">🐚<span>Fotoğraf ekleyince<br>burada görünecek</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hakkında -->
+  <section id="hakkinda" class="section about">
+    <h2 class="section__title">Minik Kumsal Hakkında</h2>
+    <div class="about__cards">
+      <div class="card">
+        <span class="card__emoji">🎂</span>
+        <h3>Doğum Tarihi</h3>
+        <p>21 Kasım 2025<br>Hayatımıza neşe kattığı o özel gün.</p>
+      </div>
+      <div class="card">
+        <span class="card__emoji">👩‍🍼</span>
+        <h3>Annesi</h3>
+        <p>Hale<br>Sevgiyle saran, en sıcak kucak.</p>
+      </div>
+      <div class="card">
+        <span class="card__emoji">👨‍🍼</span>
+        <h3>Babası</h3>
+        <p>Yasin<br>Güçlü ve şefkatli koruyucusu.</p>
+      </div>
+      <div class="card">
+        <span class="card__emoji">🌊</span>
+        <h3>İsminin Anlamı</h3>
+        <p>Denizin kucakladığı, huzur veren o güzel kıyı gibi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="galeri" class="section gallery">
+    <h2 class="section__title">Fotoğraf Galerisi</h2>
+    <p class="section__sub">En güzel anları 💛</p>
+    <div id="galleryGrid" class="gallery__grid"></div>
+    <div id="galleryEmpty" class="gallery__empty">
+      <span>📷</span>
+      <h3>Henüz fotoğraf yok</h3>
+      <p><b>fotograflar</b> klasörüne resimlerini ekle,<br>sonra <b>fotograflari-guncelle</b> dosyasına çift tıkla.</p>
+    </div>
+  </section>
+
+  <!-- Anılar / Timeline -->
+  <section id="anilar" class="section memories">
+    <h2 class="section__title">Anılarımız</h2>
+    <div class="timeline">
+      <div class="timeline__item">
+        <div class="timeline__dot">👶</div>
+        <div class="timeline__body">
+          <h3>İlk Gün · 21 Kasım 2025</h3>
+          <p>Dünyaya geldiği ve annesi Hale ile babası Yasin'in kalbini ışıkla doldurduğu an.</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__dot">😊</div>
+        <div class="timeline__body">
+          <h3>İlk Gülümseme</h3>
+          <p>O minik gülümseme her şeye değdi.</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__dot">🌟</div>
+        <div class="timeline__body">
+          <h3>Ve Devamı...</h3>
+          <p>Nice güzel anılar biriktirmek için sabırsızlanıyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Sevgiyle yapıldı 💛 · <b>Kumsal</b></p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Kapat">&times;</button>
+    <button class="lightbox__nav lightbox__prev" aria-label="Önceki">&#8249;</button>
+    <img id="lightboxImg" src="" alt="" />
+    <button class="lightbox__nav lightbox__next" aria-label="Sonraki">&#8250;</button>
+  </div>
+
+  <!-- Fotoğraf listesi (otomatik oluşturulur) -->
+  <script src="fotograflar/liste.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
