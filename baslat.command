@@ -8,23 +8,29 @@ cd "$(dirname "$0")" || exit 1
 
 echo "🐚 Kumsal sitesi hazirlaniyor..."
 
-# --- Fotograf listesini olustur ---
+# --- Fotograf ve video listesini olustur ---
 python3 - <<'PYEOF'
 import os, json
-klasor = "fotograflar"
-uzantilar = (".jpg", ".jpeg", ".png", ".webp", ".gif")
-dosyalar = []
-if os.path.isdir(klasor):
-    for f in sorted(os.listdir(klasor)):
-        if f.lower().endswith(uzantilar):
-            dosyalar.append(f)
+
+def tara(klasor, uzantilar):
+    bulunan = []
+    if os.path.isdir(klasor):
+        for f in sorted(os.listdir(klasor)):
+            if f.lower().endswith(uzantilar):
+                bulunan.append(f)
+    return bulunan
+
+fotolar = tara("fotograflar", (".jpg", ".jpeg", ".png", ".webp", ".gif"))
+videolar = tara("videolar", (".mp4", ".webm", ".mov", ".ogg"))
+
 icerik = (
     "// Bu dosya otomatik olusturulur.\n"
-    "window.KUMSAL_FOTOLAR = " + json.dumps(dosyalar, ensure_ascii=False) + ";\n"
+    "window.KUMSAL_FOTOLAR = " + json.dumps(fotolar, ensure_ascii=False) + ";\n"
+    "window.KUMSAL_VIDEOLAR = " + json.dumps(videolar, ensure_ascii=False) + ";\n"
 )
-with open(os.path.join(klasor, "liste.js"), "w", encoding="utf-8") as fh:
+with open(os.path.join("fotograflar", "liste.js"), "w", encoding="utf-8") as fh:
     fh.write(icerik)
-print(f"✅ {len(dosyalar)} fotograf bulundu.")
+print(f"✅ {len(fotolar)} fotograf, {len(videolar)} video bulundu.")
 PYEOF
 
 # --- Sunucuyu baslat ---

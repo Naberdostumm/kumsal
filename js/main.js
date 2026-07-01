@@ -34,6 +34,36 @@
     });
   }
 
+  // --- Videolar ---
+  const videolar = (window.KUMSAL_VIDEOLAR || []).map(function (v) {
+    return "videolar/" + v;
+  });
+  const videoGrid = document.getElementById("videoGrid");
+  const videoEmpty = document.getElementById("videoEmpty");
+  const videoTipleri = { mp4: "video/mp4", webm: "video/webm", mov: "video/quicktime", ogg: "video/ogg" };
+
+  if (videolar.length === 0) {
+    if (videoEmpty) videoEmpty.style.display = "block";
+    if (videoGrid) videoGrid.style.display = "none";
+  } else {
+    if (videoEmpty) videoEmpty.style.display = "none";
+    videolar.forEach(function (src) {
+      const uzanti = src.split(".").pop().toLowerCase();
+      const item = document.createElement("div");
+      item.className = "video__item reveal";
+      const video = document.createElement("video");
+      video.controls = true;
+      video.preload = "metadata";
+      video.setAttribute("playsinline", "");
+      const source = document.createElement("source");
+      source.src = src;
+      source.type = videoTipleri[uzanti] || "";
+      video.appendChild(source);
+      item.appendChild(video);
+      videoGrid.appendChild(item);
+    });
+  }
+
   // --- Lightbox ---
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");

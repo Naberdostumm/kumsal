@@ -1,0 +1,8 @@
+🎥 Kumsal'ın videolarını BU KLASÖRE ekle.
+
+- En uyumlu format: .mp4  (ayrıca .webm ve .mov desteklenir)
+- Dosya başına sınır: 100 MB (GitHub kuralı). Büyük videoları küçültmek gerekebilir.
+- İstediğin kadar video ekleyebilirsin.
+
+Videoları ekledikten sonra ana klasördeki "baslat" dosyasına çift tıkla;
+site otomatik güncellenir. 💛
