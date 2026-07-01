@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(chmod +x baslat.command)",
-      "Bash(python3 -c \"print\\('python3 OK'\\)\")"
-    ]
-  }
-}
